@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Customer Churn Prediction Result</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .result-container {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: 400px;
+            text-align: center;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        .prediction-result {
+            margin-top: 20px;
+            font-weight: bold;
+            font-size: 18px;
+            color: #333;
+        }
+
+        .churn-yes {
+            color: #e74c3c; /* Red color for Churn: Yes */
+        }
+
+        .churn-no {
+            color: #2ecc71; /* Green color for Churn: No */
+        }
+    </style>
+</head>
+<body>
+    <div class="result-container">
+        <h1>Customer Churn Prediction Result</h1>
+        <div class="prediction-result">
+            <p>{{value}}</p>
+            <!-- Prediction result will be displayed here -->
+            {% if prediction == 'Churn: Yes' %}
+                <p class="churn-yes">{{ prediction }}</p>
+            {% else %}
+                <p class="churn-no">{{ prediction }}</p>
+            {% endif %}
+        </div>
+    </div>
+</body>
+</html>
